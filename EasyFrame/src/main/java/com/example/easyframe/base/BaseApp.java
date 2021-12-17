@@ -1,6 +1,8 @@
 package com.example.easyframe.base;
 
 import android.app.Application;
+import android.content.Context;
+import androidx.multidex.MultiDex;
 import com.example.easyframe.net.EasyNet;
 import com.example.easyframe.utils.EasyLog;
 import com.example.easyframe.utils.EasyMMKV;
@@ -18,4 +20,10 @@ public class BaseApp extends Application {
         EasyNet.init();
 
     }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
 }
