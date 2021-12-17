@@ -64,10 +64,7 @@ dependencies {
     api 'com.github.liujingxing.rxlife:rxlife-rxjava3:2.1.0' //管理RxJava3生命周期，页面销毁，关闭请求
     api 'com.github.liujingxing.rxhttp:converter-jackson:2.6.1'
 
-    def nav_version = "2.3.5"
 
-    // Java language implementation
-    api "androidx.navigation:navigation-fragment:$nav_version"
-    api "androidx.navigation:navigation-ui:$nav_version"
+
 
 }
