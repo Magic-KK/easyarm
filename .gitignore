@@ -1,0 +1,14 @@
+bin/
+gen/
+out/
+build/
+.settings/
+.idea/
+.gradle/
+.classpath
+.project
+*.iml
+*.ipr
+*.iws
+.DS_Store
+local.properties
