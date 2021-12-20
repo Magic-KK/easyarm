@@ -1,4 +1,4 @@
-package com.example.easyframe.utils;
+package com.example.easyframe.toolmodel;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;

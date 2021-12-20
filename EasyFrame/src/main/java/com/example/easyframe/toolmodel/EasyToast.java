@@ -1,4 +1,4 @@
-package com.example.easyframe.utils;
+package com.example.easyframe.toolmodel;
 
 import android.app.Application;
 import android.content.Context;

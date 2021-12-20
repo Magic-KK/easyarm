@@ -3,9 +3,9 @@ package com.example.easyframe.base;
 import android.app.Application;
 
 import com.example.easyframe.net.EasyNet;
-import com.example.easyframe.utils.EasyLog;
-import com.example.easyframe.utils.EasyMMKV;
-import com.example.easyframe.utils.EasyToast;
+import com.example.easyframe.toolmodel.EasyLog;
+import com.example.easyframe.toolmodel.EasyMMKV;
+import com.example.easyframe.toolmodel.EasyToast;
 
 public class BaseApp extends Application {
 

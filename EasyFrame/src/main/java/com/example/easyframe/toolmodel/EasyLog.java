@@ -1,4 +1,4 @@
-package com.example.easyframe.utils;
+package com.example.easyframe.toolmodel;
 
 import com.elvishew.xlog.*;
 import com.elvishew.xlog.interceptor.BlacklistTagsFilterInterceptor;

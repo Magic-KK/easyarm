@@ -1,12 +1,10 @@
 package com.example.easyframe;
 
-import android.util.Log;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.easyframe.base.EasyBaseActivity;
-import com.example.easyframe.utils.EasyLog;
-import com.example.easyframe.utils.EasyMMKV;
+import com.example.easyframe.toolmodel.EasyLog;
+import com.example.easyframe.toolmodel.EasyMMKV;
 
 
 public class MainActivity extends EasyBaseActivity {
