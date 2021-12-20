@@ -64,7 +64,7 @@ dependencies {
     api 'io.reactivex.rxjava3:rxandroid:3.0.0'
     api 'com.github.liujingxing.rxlife:rxlife-rxjava3:2.1.0' //管理RxJava3生命周期，页面销毁，关闭请求
     api 'com.github.liujingxing.rxhttp:converter-jackson:2.6.1'
-
+    api 'com.github.getActivity:ToastUtils:10.0'
 
 
 }
