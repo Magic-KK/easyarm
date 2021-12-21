@@ -7,6 +7,7 @@ import com.example.easyframe.toolmodel.EasyLog;
 import com.example.easyframe.toolmodel.EasyMMKV;
 
 
+
 public class MainActivity extends EasyBaseActivity {
 
 
@@ -30,7 +31,8 @@ public class MainActivity extends EasyBaseActivity {
         findViewById(R.id.get).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EasyLog.d(EasyMMKV.getString("ll"));
+
+
             }
         });
     }

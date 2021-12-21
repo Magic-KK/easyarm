@@ -2,7 +2,6 @@ package com.example.easyframe.base;
 
 import android.app.Application;
 
-import com.example.easyframe.net.EasyNet;
 import com.example.easyframe.toolmodel.EasyLog;
 import com.example.easyframe.toolmodel.EasyMMKV;
 import com.example.easyframe.toolmodel.EasyToast;
@@ -20,8 +19,6 @@ public class BaseApp extends Application {
         EasyLog.init();
         //初始化MKKV
         EasyMMKV.init(this);
-        //初始化网络层
-        EasyNet.init();
         //初始化Toast
         EasyToast.initToast(this);
     }
