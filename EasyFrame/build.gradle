@@ -48,7 +48,7 @@ dependencies {
 
 
     //轻量级键值储存工具
-    implementation 'com.tencent:mmkv:1.0.22'
+    api 'com.tencent:mmkv:1.0.22'
     //Log日志工具
     implementation 'com.elvishew:xlog:1.9.0'
 
