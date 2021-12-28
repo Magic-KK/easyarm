@@ -1,14 +1,21 @@
 package com.example.easyframe.base;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.easyframe.view.EasyProgressDialog;
 
 /**
  * BaseActivity
  */
 public abstract class EasyBaseActivity extends AppCompatActivity {
+
+    private EasyProgressDialog mProgressDialog;
+    protected boolean isDestroy;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,5 +34,25 @@ public abstract class EasyBaseActivity extends AppCompatActivity {
 
     public abstract int getActivityLayoutId();
 
+    public void showProgress() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            return;
+        }
+        mProgressDialog = new EasyProgressDialog(this);
+        mProgressDialog.show();
+    }
 
+    public void hideProgress() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()
+                && !isDestroy) {
+            mProgressDialog.dismiss();
+        }
+        mProgressDialog = null;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        isDestroy = true;
+    }
 }

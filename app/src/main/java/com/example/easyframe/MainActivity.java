@@ -31,7 +31,7 @@ public class MainActivity extends EasyBaseActivity {
         findViewById(R.id.get).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showProgress();
             }
         });
     }

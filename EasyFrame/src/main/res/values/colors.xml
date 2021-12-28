@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 弹出框遮罩背景色 -->
+    <color name="easy_common_popup_shadow_color">#33000000</color>
+</resources>
