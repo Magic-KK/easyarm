@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.example.easyframe.R;
 
 /**
- * Created by guogansheng on 2017/12/29.
+ * Created by zk
  */
 
 public class EasyProgressDialog extends Dialog {
