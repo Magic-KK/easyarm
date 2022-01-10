@@ -3,8 +3,11 @@ package com.example.easyframe.base;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.easyframe.toolmodel.EasyToast;
 import com.example.easyframe.view.EasyProgressDialog;
 
 /**
@@ -14,7 +17,6 @@ public abstract class EasyBaseActivity extends AppCompatActivity {
 
     private EasyProgressDialog mProgressDialog;
     protected boolean isDestroy;
-
 
 
     @Override
@@ -49,6 +51,15 @@ public abstract class EasyBaseActivity extends AppCompatActivity {
         }
         mProgressDialog = null;
     }
+
+    public void showToast(String text) {
+        EasyToast.show(text);
+    }
+
+    public void showToast(int text) {
+        EasyToast.show(text);
+    }
+
 
     @Override
     protected void onDestroy() {

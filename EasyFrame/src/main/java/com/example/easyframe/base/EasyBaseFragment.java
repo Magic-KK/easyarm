@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
+
+import com.example.easyframe.toolmodel.EasyToast;
 
 public abstract class EasyBaseFragment extends Fragment {
 
@@ -32,5 +35,13 @@ public abstract class EasyBaseFragment extends Fragment {
     public abstract void initData();
 
     public abstract int getFragmentLayoutId();
+
+    public void showToast(String text) {
+        EasyToast.show(text);
+    }
+
+    public void showToast(int text) {
+        EasyToast.show(text);
+    }
 
 }
