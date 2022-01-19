@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.easyframe.toolmodel.EasyToast;
+import com.example.easyframe.view.EasyProgressDialog;
 
 public abstract class EasyBaseFragment extends Fragment {
 
     protected View mRootView;
-
+    private EasyProgressDialog mProgressDialog;
+    protected boolean isDestroy;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -20,7 +22,8 @@ public abstract class EasyBaseFragment extends Fragment {
             mRootView = inflater.inflate(getFragmentLayoutId(), container, false);
 
             initView(mRootView);
-            initData();
+            initListener(mRootView);
+            initData(mRootView);
         } else {
             if (mRootView.getParent() != null) {
                 ((ViewGroup) mRootView.getParent()).removeView(mRootView);
@@ -32,7 +35,9 @@ public abstract class EasyBaseFragment extends Fragment {
 
     public abstract void initView(View view);
 
-    public abstract void initData();
+    public abstract void initListener(View view);
+    
+    public abstract void initData(View view);
 
     public abstract int getFragmentLayoutId();
 
@@ -44,4 +49,26 @@ public abstract class EasyBaseFragment extends Fragment {
         EasyToast.show(text);
     }
 
+
+    public void showProgress() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            return;
+        }
+        mProgressDialog = new EasyProgressDialog(getContext());
+        mProgressDialog.show();
+    }
+
+    public void hideProgress() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()
+                && !isDestroy) {
+            mProgressDialog.dismiss();
+        }
+        mProgressDialog = null;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        isDestroy = true;
+    }
 }
