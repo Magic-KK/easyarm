@@ -29,7 +29,6 @@ public abstract class EasyBaseFragment extends Fragment {
                 ((ViewGroup) mRootView.getParent()).removeView(mRootView);
             }
         }
-
         return mRootView;
     }
 
@@ -49,13 +48,17 @@ public abstract class EasyBaseFragment extends Fragment {
         EasyToast.show(text);
     }
 
-
     public void showProgress() {
+        showProgress("");
+    }
+
+    public void showProgress(String title) {
         if (mProgressDialog != null && mProgressDialog.isShowing()) {
             return;
         }
         mProgressDialog = new EasyProgressDialog(getContext());
         mProgressDialog.show();
+        mProgressDialog.setTitle(title);
     }
 
     public void hideProgress() {

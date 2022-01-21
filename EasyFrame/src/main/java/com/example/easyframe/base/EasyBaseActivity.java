@@ -36,17 +36,22 @@ public abstract class EasyBaseActivity extends AppCompatActivity {
 
     public abstract int getActivityLayoutId();
 
+
     public void showProgress() {
+        showProgress("");
+    }
+
+    public void showProgress(String title) {
         if (mProgressDialog != null && mProgressDialog.isShowing()) {
             return;
         }
         mProgressDialog = new EasyProgressDialog(this);
         mProgressDialog.show();
+        mProgressDialog.setTitle(title);
     }
 
     public void hideProgress() {
-        if (mProgressDialog != null && mProgressDialog.isShowing()
-                && !isDestroy) {
+        if (mProgressDialog != null && mProgressDialog.isShowing() && !isDestroy) {
             mProgressDialog.dismiss();
         }
         mProgressDialog = null;
