@@ -9,6 +9,10 @@ import com.tencent.mmkv.MMKV;
  */
 public class EasyMMKV {
 
+    public static void init(Context context) {
+        MMKV.initialize(context);
+    }
+
     public static void save(String sp, String key, String value) {
         MMKV.mmkvWithID(sp).encode(key, value);
     }
