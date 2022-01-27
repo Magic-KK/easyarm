@@ -9,28 +9,35 @@ import com.tencent.mmkv.MMKV;
  */
 public class EasyMMKV {
 
-    static MMKV kv = null;
-
-    /**
-     * 初始化 MMKV
-     *
-     * @param context
-     */
-    public static void init(Context context) {
-        MMKV.initialize(context);
-        kv = MMKV.defaultMMKV();
+    public static void save(String sp, String key, String value) {
+        MMKV.mmkvWithID(sp).encode(key, value);
     }
 
-    public static void save(String key, String value) {
-        kv.encode(key, value);
+    public static void save(String sp, String key, int value) {
+        MMKV.mmkvWithID(sp).encode(key, value);
     }
 
-    public static String getString(String key) {
-        return kv.decodeString(key);
+    public static String getString(String sp, String key) {
+        return MMKV.mmkvWithID(sp).decodeString(key);
     }
 
-    public static String getString(String key, String defaults) {
-        return kv.decodeString(key, defaults);
+    public static String getString(String sp, String key, String defaultValue) {
+        return MMKV.mmkvWithID(sp).decodeString(key, defaultValue);
     }
 
+    public static int getInt(String sp, String key) {
+        return MMKV.mmkvWithID(sp).decodeInt(key);
+    }
+
+    public static int getInt(String sp, String key, int defaultValue) {
+        return MMKV.mmkvWithID(sp).decodeInt(key, defaultValue);
+    }
+
+    public static void clear(String sp) {
+        MMKV.mmkvWithID(sp).clearAll();
+    }
+
+    public static void removeKey(String sp, String key) {
+        MMKV.mmkvWithID(sp).remove(key);
+    }
 }

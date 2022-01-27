@@ -17,8 +17,6 @@ public class BaseApp extends Application {
     public void init() {
         //Log初始化
         EasyLog.init();
-        //初始化MKKV
-        EasyMMKV.init(this);
         //初始化Toast
         EasyToast.initToast(this);
     }

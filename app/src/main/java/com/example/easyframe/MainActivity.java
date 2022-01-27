@@ -19,7 +19,6 @@ public class MainActivity extends EasyBaseActivity {
                 long start = System.currentTimeMillis();
                 long end = 0;
                 for (int i = 0; i < 100000; i++) {
-                    EasyMMKV.save("ll", i + "");
                     end = System.currentTimeMillis();
                 }
 
