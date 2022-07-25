@@ -8,11 +8,15 @@ public class LoginPresenter extends BasePresenter<LoginView> {
 
     @Override
     public void ModelBinding() {
-        model = new LoginModel(mView);
+        model = new LoginModel(this);
     }
 
     public void getLogin(){
         model.getLogin();
+    }
+
+    public void result(){
+        mView.loginSuccess();
     }
 
 
