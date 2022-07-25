@@ -1,7 +1,6 @@
 package net;
 
 import android.app.Application;
-import com.example.easyframe.BuildConfig;
 import com.hjq.http.EasyConfig;
 import okhttp3.OkHttpClient;
 
@@ -14,7 +13,7 @@ public class EasyNet {
 
         EasyConfig.with(okHttpClient)
                 // 是否打印日志
-                .setLogEnabled(BuildConfig.DEBUG)
+                .setLogEnabled(true)
                 // 设置服务器配置
                 .setServer(new RequestServer())
                 // 设置请求处理策略
