@@ -1,9 +1,5 @@
 package com.example.easyframe.mvp;
-
-
-
 import com.example.easyframe.mvp.base.BasePresenter;
-
 import java.util.HashMap;
 
 /**
@@ -13,11 +9,11 @@ import java.util.HashMap;
  */
 public class PresenterStore<P extends BasePresenter> {
 
-    private static final String DEFAULT_KEY="PresenterStore.DefaultKey";
-    private HashMap<String, P> mMap=new HashMap<>();
+    private static final String DEFAULT_KEY = "PresenterStore.DefaultKey";
+    private  HashMap<String, P> mMap = new HashMap<>();
 
     public final void put(String key, P presenter) {
-        P oldPresenter=mMap.put(DEFAULT_KEY + ":" + key, presenter);
+        P oldPresenter = mMap.put(DEFAULT_KEY + ":" + key, presenter);
         if (oldPresenter != null) {
             oldPresenter.onCleared();
         }
