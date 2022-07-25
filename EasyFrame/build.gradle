@@ -53,7 +53,7 @@ dependencies {
     implementation 'com.elvishew:xlog:1.9.0'
 
     // 网络请求框架：https://github.com/getActivity/EasyHttp
-    api 'com.github.getActivity:EasyHttp:10.8'
+    api 'com.github.getActivity:EasyHttp:11.2'
     // OkHttp 框架：https://github.com/square/okhttp
     // noinspection GradleDependency
     api 'com.squareup.okhttp3:okhttp:3.12.13'
