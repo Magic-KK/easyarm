@@ -20,14 +20,14 @@ public class PresenterDispatch {
     private PresenterProviders mProviders;
 
     public PresenterDispatch(PresenterProviders providers) {
-        mProviders = providers;
+        mProviders=providers;
     }
 
     public <P extends BasePresenter> void attachView(Context context, Object view) {
-        PresenterStore store = mProviders.getPresenterStore();
-        HashMap<String, P> mMap = store.getMap();
+        PresenterStore store=mProviders.getPresenterStore();
+        HashMap<String, P> mMap=store.getMap();
         for (Map.Entry<String, P> entry : mMap.entrySet()) {
-            P presenter = entry.getValue();
+            P presenter=entry.getValue();
             if (presenter != null) {
                 presenter.attachView(context, view);
             }
@@ -35,10 +35,10 @@ public class PresenterDispatch {
     }
 
     public <P extends BasePresenter> void detachView() {
-        PresenterStore store = mProviders.getPresenterStore();
-        HashMap<String, P> mMap = store.getMap();
+        PresenterStore store=mProviders.getPresenterStore();
+        HashMap<String, P> mMap=store.getMap();
         for (Map.Entry<String, P> entry : mMap.entrySet()) {
-            P presenter = entry.getValue();
+            P presenter=entry.getValue();
             if (presenter != null) {
                 presenter.detachView();
             }
@@ -46,10 +46,10 @@ public class PresenterDispatch {
     }
 
     public <P extends BasePresenter> void onCreatePresenter(@Nullable Bundle savedState) {
-        PresenterStore store = mProviders.getPresenterStore();
-        HashMap<String, P> mMap = store.getMap();
+        PresenterStore store=mProviders.getPresenterStore();
+        HashMap<String, P> mMap=store.getMap();
         for (Map.Entry<String, P> entry : mMap.entrySet()) {
-            P presenter = entry.getValue();
+            P presenter=entry.getValue();
             if (presenter != null) {
                 presenter.onCreatePresenter(savedState);
             }
@@ -57,10 +57,10 @@ public class PresenterDispatch {
     }
 
     public <P extends BasePresenter> void onDestroyPresenter() {
-        PresenterStore store = mProviders.getPresenterStore();
-        HashMap<String, P> mMap = store.getMap();
+        PresenterStore store=mProviders.getPresenterStore();
+        HashMap<String, P> mMap=store.getMap();
         for (Map.Entry<String, P> entry : mMap.entrySet()) {
-            P presenter = entry.getValue();
+            P presenter=entry.getValue();
             if (presenter != null) {
                 presenter.onDestroyPresenter();
             }
@@ -68,10 +68,10 @@ public class PresenterDispatch {
     }
 
     public <P extends BasePresenter> void onSaveInstanceState(Bundle outState) {
-        PresenterStore store = mProviders.getPresenterStore();
-        HashMap<String, P> mMap = store.getMap();
+        PresenterStore store=mProviders.getPresenterStore();
+        HashMap<String, P> mMap=store.getMap();
         for (Map.Entry<String, P> entry : mMap.entrySet()) {
-            P presenter = entry.getValue();
+            P presenter=entry.getValue();
             if (presenter != null) {
                 presenter.onSaveInstanceState(outState);
             }
