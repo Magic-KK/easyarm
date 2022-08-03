@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
+import com.hjq.gson.factory.GsonFactory;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class EasyGsonUtil {
 
     static {
         if (gson == null) {
-            gson = new Gson();
+            gson = GsonFactory.getSingletonGson();
         }
     }
 
