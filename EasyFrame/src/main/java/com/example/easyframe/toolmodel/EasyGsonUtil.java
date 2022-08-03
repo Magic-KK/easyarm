@@ -18,7 +18,7 @@ public class EasyGsonUtil {
 
     static {
         if (gson == null) {
-            gson = GsonFactory.getSingletonGson();
+            gson = new Gson();
         }
     }
 
