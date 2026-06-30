@@ -106,7 +106,7 @@ MVP pages extend `EasyBaseMvpActivity` or `EasyBaseMvpFragment`. Use `@CreatePre
 public class LoginActivity extends EasyBaseMvpActivity<LoginPresenter> implements LoginView {
 
     @PresenterVariable
-    LoginPresenter presenter;
+    private LoginPresenter presenter;
 
     @Override
     public int getActivityLayoutId() {
@@ -115,11 +115,11 @@ public class LoginActivity extends EasyBaseMvpActivity<LoginPresenter> implement
 
     @Override
     public void initView(Bundle savedInstanceState) {
-        findViewById(R.id.ss).setOnClickListener(v -> presenter.getLogin());
     }
 
     @Override
     public void initListener() {
+        findViewById(R.id.btn_login_demo).setOnClickListener(v -> presenter.getLogin());
     }
 
     @Override
@@ -213,7 +213,9 @@ EasyGlideUtils.load(this, imageUrl, imageView, R.drawable.main_brand_place_holde
 The demo app is in the `app` module:
 
 - `App`: extends `BaseApp` and initializes the demo network layer.
-- `login/LoginActivity`: demonstrates MVP Presenter creation and injection.
+- `MainActivity`: the demo entry, demonstrating the `EasyBaseActivity` template methods, `EasyMMKV` save/read flow, and navigation to the MVP demo.
+- `login/LoginActivity`: demonstrates MVP Presenter creation, injection, and View callbacks.
+- `login/LoginModel` / `login/LoginPresenter` / `login/LoginView`: demonstrates the View, Presenter, and Model call chain.
 - `net/EasyNet`: demonstrates EasyHttp global configuration.
 
 ## Build

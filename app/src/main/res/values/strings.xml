@@ -3,6 +3,17 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="demo_base_title">基础页面示例：MMKV 保存与读取</string>
+    <string name="demo_mmkv_save_button">保存示例 Token</string>
+    <string name="demo_mmkv_get_button">读取示例 Token</string>
+    <string name="demo_mmkv_save_success">示例 Token 已保存</string>
+    <string name="demo_mmkv_token_empty">请先保存示例 Token</string>
+    <string name="demo_mmkv_token_format">读取到：%1$s</string>
+    <string name="demo_open_mvp_button">打开 MVP 示例</string>
+    <string name="demo_mvp_title">MVP 示例：点击按钮触发 Presenter</string>
+    <string name="demo_mvp_login_button">模拟登录成功</string>
+    <string name="demo_mvp_login_success">MVP 示例回调成功</string>
+
     <string name="http_data_explain_error">数据解析异常，请稍后</string>
     <string name="http_server_out_time">服务器请求超时，请稍后再试</string>
     <string name="http_network_error">请求失败，请检查网络设置</string>

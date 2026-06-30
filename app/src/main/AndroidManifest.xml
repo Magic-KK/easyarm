@@ -27,8 +27,9 @@
         android:supportsRtl="true"
         android:name=".App"
         android:theme="@style/AppTheme">
+        <activity android:name=".login.LoginActivity" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -37,7 +38,6 @@
             </intent-filter>
         </activity>
 
-<!--        <activity android:name=".login.LoginActivity"/>-->
     </application>
 
 </manifest>

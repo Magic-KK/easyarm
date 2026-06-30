@@ -106,7 +106,7 @@ MVP 页面继承 `EasyBaseMvpActivity` 或 `EasyBaseMvpFragment`，使用 `@Crea
 public class LoginActivity extends EasyBaseMvpActivity<LoginPresenter> implements LoginView {
 
     @PresenterVariable
-    LoginPresenter presenter;
+    private LoginPresenter presenter;
 
     @Override
     public int getActivityLayoutId() {
@@ -115,11 +115,11 @@ public class LoginActivity extends EasyBaseMvpActivity<LoginPresenter> implement
 
     @Override
     public void initView(Bundle savedInstanceState) {
-        findViewById(R.id.ss).setOnClickListener(v -> presenter.getLogin());
     }
 
     @Override
     public void initListener() {
+        findViewById(R.id.btn_login_demo).setOnClickListener(v -> presenter.getLogin());
     }
 
     @Override
@@ -213,7 +213,9 @@ EasyGlideUtils.load(this, imageUrl, imageView, R.drawable.main_brand_place_holde
 示例应用位于 `app` 模块，包含：
 
 - `App`：继承 `BaseApp` 并初始化示例网络层。
-- `login/LoginActivity`：演示 MVP 注解创建和 Presenter 注入。
+- `MainActivity`：示例入口，演示 `EasyBaseActivity` 模板方法、`EasyMMKV` 保存/读取，并可跳转到 MVP 示例。
+- `login/LoginActivity`：演示 MVP 注解创建、Presenter 注入和 View 回调。
+- `login/LoginModel` / `login/LoginPresenter` / `login/LoginView`：演示 View、Presenter、Model 的调用链。
 - `net/EasyNet`：演示 EasyHttp 的全局配置。
 
 ## 构建
