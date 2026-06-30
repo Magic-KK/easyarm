@@ -12,7 +12,7 @@ easyarm
 └── settings.gradle # Module declarations
 ```
 
-The current project uses Android Gradle Plugin `4.0.0`, Gradle Wrapper `6.1.1`, Java 8, and AndroidX. `EasyFrame` uses `minSdkVersion 19`; the demo app uses `minSdkVersion 21`.
+The current project uses Android Gradle Plugin `9.2.1`, Gradle Wrapper `9.6.1`, JDK 17 to run Gradle, Java 8 source compatibility, and AndroidX. Both `EasyFrame` and the demo `app` use `minSdk 23`; both use `compileSdk` / `targetSdk 36`.
 
 ## Installation
 
@@ -35,7 +35,6 @@ For a new project, enable AndroidX:
 
 ```properties
 android.useAndroidX=true
-android.enableJetifier=true
 ```
 
 ## Initialization
@@ -226,4 +225,4 @@ Use the Gradle Wrapper in this repository:
 ./gradlew :app:assembleDebug
 ```
 
-If your local JDK is not compatible with the old Gradle version, use a JDK supported by Android Gradle Plugin 4.0.0 or select a matching Gradle JDK in Android Studio.
+If your local JDK is not compatible with Gradle, use JDK 17 or select a matching Gradle JDK in Android Studio.

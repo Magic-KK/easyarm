@@ -1,7 +1,8 @@
 package net;
 
+import com.hjq.http.config.IHttpPostBodyStrategy;
 import com.hjq.http.config.IRequestServer;
-import com.hjq.http.model.BodyType;
+import com.hjq.http.model.RequestBodyType;
 
 public class RequestServer implements IRequestServer {
 
@@ -11,8 +12,8 @@ public class RequestServer implements IRequestServer {
     }
 
     @Override
-    public BodyType getBodyType() {
+    public IHttpPostBodyStrategy getBodyType() {
         // 参数以 Json 格式提交（默认是表单）
-        return BodyType.JSON;
+        return RequestBodyType.JSON;
     }
 }

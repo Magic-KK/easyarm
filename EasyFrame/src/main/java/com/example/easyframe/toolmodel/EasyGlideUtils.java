@@ -15,7 +15,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.example.easyframe.R;
 
 import java.io.File;
 

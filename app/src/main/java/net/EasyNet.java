@@ -10,6 +10,7 @@ public class EasyNet {
     public static void init(Application application) {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .build();
+        RequestHandler requestHandler = new RequestHandler(application);
 
         EasyConfig.with(okHttpClient)
                 // 是否打印日志
@@ -17,7 +18,9 @@ public class EasyNet {
                 // 设置服务器配置
                 .setServer(new RequestServer())
                 // 设置请求处理策略
-                .setHandler(new RequestHandler(application))
+                .setHandler(requestHandler)
+                // 设置请求缓存策略
+                .setCacheStrategy(requestHandler)
                 // 设置请求重试次数
                 .setRetryCount(3)
                 // 添加全局请求参数

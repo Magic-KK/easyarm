@@ -1,20 +1,19 @@
 package com.example.easyframe.toolmodel;
 
 import android.app.Application;
-import android.content.Context;
-import com.hjq.toast.ToastUtils;
+import com.hjq.toast.Toaster;
 
 public class EasyToast {
     public static void initToast(Application context) {
-        ToastUtils.init(context);
+        Toaster.init(context);
     }
 
     public static void show(String text) {
-        ToastUtils.show(text);
+        Toaster.show(text);
     }
 
     public static void show(int text) {
-        ToastUtils.show(text);
+        Toaster.show(text);
     }
 
 }

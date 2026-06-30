@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import com.example.easyframe.R;
+import com.example.easyframe.library.R;
 
 /**
  * Created by zk

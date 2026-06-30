@@ -12,7 +12,7 @@ easyarm
 └── settings.gradle # 模块声明
 ```
 
-当前工程使用 Android Gradle Plugin `4.0.0`、Gradle Wrapper `6.1.1`、Java 8、AndroidX。`EasyFrame` 的 `minSdkVersion` 为 `19`，示例 `app` 的 `minSdkVersion` 为 `21`。
+当前工程使用 Android Gradle Plugin `9.2.1`、Gradle Wrapper `9.6.1`、JDK 17 运行 Gradle、Java 8 源码兼容、AndroidX。`EasyFrame` 和示例 `app` 的 `minSdk` 均为 `23`，`compileSdk` / `targetSdk` 均为 `36`。
 
 ## 接入方式
 
@@ -35,7 +35,6 @@ dependencies {
 
 ```properties
 android.useAndroidX=true
-android.enableJetifier=true
 ```
 
 ## 初始化
@@ -226,4 +225,4 @@ EasyGlideUtils.load(this, imageUrl, imageView, R.drawable.main_brand_place_holde
 ./gradlew :app:assembleDebug
 ```
 
-如遇到本地 JDK 与旧版 Gradle 不兼容，请使用 Android Gradle Plugin 4.0.0 支持的 JDK 版本或在 Android Studio 中使用匹配的 Gradle JDK。
+如遇到本地 JDK 与 Gradle 不兼容，请使用 JDK 17 或在 Android Studio 中使用匹配的 Gradle JDK。

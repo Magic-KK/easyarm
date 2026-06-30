@@ -10,6 +10,7 @@ import com.example.easyframe.R;
 import com.google.gson.JsonSyntaxException;
 import com.hjq.gson.factory.GsonFactory;
 import com.hjq.http.EasyLog;
+import com.hjq.http.config.IHttpCacheStrategy;
 import com.hjq.http.config.IRequestHandler;
 import com.hjq.http.exception.*;
 import com.hjq.http.request.HttpRequest;
@@ -28,7 +29,7 @@ import java.lang.reflect.Type;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
-public final class RequestHandler implements IRequestHandler {
+public final class RequestHandler implements IRequestHandler, IHttpCacheStrategy {
 
     private final Application mApplication;
     private final MMKV mMmkv;
@@ -39,7 +40,7 @@ public final class RequestHandler implements IRequestHandler {
     }
 
     @Override
-    public Object requestSucceed(HttpRequest<?> httpRequest, Response response, Type type) throws Exception {
+    public Object requestSuccess(HttpRequest<?> httpRequest, Response response, Type type) throws Throwable {
         if (Response.class.equals(type)) {
             return response;
         }
@@ -143,7 +144,7 @@ public final class RequestHandler implements IRequestHandler {
     }
 
     @Override
-    public Exception requestFail(HttpRequest<?> httpRequest, Exception e) {
+    public Throwable requestFail(HttpRequest<?> httpRequest, Throwable e) {
         // 判断这个异常是不是自己抛的
         if (e instanceof HttpException) {
             if (e instanceof TokenException) {
@@ -201,5 +202,17 @@ public final class RequestHandler implements IRequestHandler {
         EasyLog.printLog(httpRequest, "---------- cacheValue ----------");
         EasyLog.printJson(httpRequest, cacheValue);
         return mMmkv.putString(cacheKey, cacheValue).commit();
+    }
+
+    @Override
+    public boolean deleteCache(HttpRequest<?> httpRequest) {
+        String cacheKey = GsonFactory.getSingletonGson().toJson(httpRequest.getRequestApi());
+        mMmkv.removeValueForKey(cacheKey);
+        return true;
+    }
+
+    @Override
+    public void clearCache() {
+        mMmkv.clearAll();
     }
 }
