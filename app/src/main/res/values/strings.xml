@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">easyframe</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="demo_base_title">基础页面示例：MMKV 保存与读取</string>
     <string name="demo_mmkv_save_button">保存示例 Token</string>
